@@ -10,14 +10,16 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="http://fiche-star/js/app.js"></script>
+    <script src="http://fiche-star/js/perso.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="http://fiche-star/css/app.css" rel="stylesheet">
+    <link href="http://fiche-star/css/back.css" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -79,5 +81,10 @@
             @yield('content')
         </main>
     </div>
+
 </body>
 </html>
+
+
+
+

@@ -1,0 +1,46 @@
+.mobile_ul_liste_star{
+    padding: 0;
+}
+.mobile_li_liste_star{
+    width: 100%;
+    padding: 2px 5px;
+    margin: 0;
+    background:#e0e1e2;
+    height: auto;
+}
+
+.mobile_li_liste_star:hover{
+    font-weight: bold;
+    background: white;
+    height: auto;
+}
+.mobile_info_star{
+    background: white;
+    height: auto;
+    overflow: auto;
+    font-weight: normal;
+}
+body{
+    width: 100%;
+    min-width: auto;
+}
+.py-4{
+    margin:0 !important;
+    padding:0 !important;
+}
+main{
+    margin:0 !important;
+    padding:0 !important;
+}
+h1{
+    text-align: center !important;
+    font-weight: bold !important;
+    padding: 20px 0 !important;
+}
+.image_star{
+    max-height: 100px;
+    float: left;
+    margin: 0 10px 5px 2px;
+    box-shadow: 1px 1px 5px #555;
+    border: 5px solid #efeded;
+}

@@ -21,8 +21,10 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+    // Permet de rediriger l'utilisateur du Back vers la page de gestion de la liste
     public function index()
     {
-        return view('home');
+        return redirect()->route('indexFiche');
     }
 }

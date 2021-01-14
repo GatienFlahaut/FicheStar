@@ -1,0 +1,82 @@
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+    background: white;
+}
+#app{
+    height: 100%;
+}
+main {
+    height: 80%;
+    overflow: auto !important;
+    min-width: 600px;
+}
+.liste_star{
+    width: 200px;
+    display: flex;
+    min-width: 200px;
+    margin-top: 10px;
+    align-self: flex-start;
+    border-radius: 0 0 0 10px;
+}
+.container_liste{
+    border-right: 1px solid grey
+}
+.liste_star li{
+    width: 100%;
+    padding: 0 0 0 10px;
+    background: grey;
+    color: black;
+    border: 1px solid black;
+}
+.liste_star li:last-child {
+    border-radius: 0 0 0 10px;
+}
+.liste_star li:last-child:hover {
+    border-radius: 0 0 0 10px;
+}
+.liste_star li:first-child{
+    border-radius: 10px 0 0 0;
+}
+.liste_star li:not(.collapsed){
+    background: white;
+    color: black;
+    font-weight: bold;
+}
+.liste_star li:not(.collapsed) div{
+    background: white;
+    width: 190px;
+}
+.container{
+    display: flex;
+    min-height: 100%;
+    height: auto;
+}
+.desktop_fiche_star{
+    display:none;
+}
+.desktop_fiche_star.collapse.show{
+    display: block !important;
+    margin-left: 15px;
+    line-height: 1.2;
+    font-weight: bold;
+    width: 100%;
+}
+.desktop_fiche_star.collapse.show p{
+    font-size: 18px;
+}
+.desktop_image_star{
+    max-height: 100px;
+    float: left;
+    margin: 0 10px 5px 2px;
+    box-shadow: 1px 1px 5px #555;
+    border: 5px solid #efeded;
+}
+ .collapse.show:not(:nth-child(1)) ~ #texte-defaut {
+    display: none;
+}
+#texte-defaut{
+    display: block;
+}

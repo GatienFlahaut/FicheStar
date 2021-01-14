@@ -15,6 +15,7 @@ class Identite extends Model
      * @var array
      */
     protected $fillable = [
+        'id',
         'nom',
         'prenom',
         'description',

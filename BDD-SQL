@@ -1,0 +1,204 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.4
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : 127.0.0.1:3306
+-- Généré le : jeu. 14 jan. 2021 à 16:39
+-- Version du serveur :  5.7.21
+-- Version de PHP : 8.0.1
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de données : `fiche-star`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `failed_jobs`
+--
+
+DROP TABLE IF EXISTS `failed_jobs`;
+CREATE TABLE IF NOT EXISTS `failed_jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `identites`
+--
+
+DROP TABLE IF EXISTS `identites`;
+CREATE TABLE IF NOT EXISTS `identites` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prenom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `identites`
+--
+
+INSERT INTO `identites` (`id`, `nom`, `prenom`, `description`, `created_at`, `updated_at`) VALUES
+(86, 'Lecordier', 'Brigitte', 'Brigitte Lecordier, née le 14 avril 1961, est une actrice française spécialisée dans le doublage.\r\nElle est particulièrement connue dans l\'animation pour avoir prêté sa voix au personnage Son Goku enfant, Son Gohan enfant et Son Goten dans les séries et films de Dragon Ball, Dragon Ball Z, Dragon Ball GT, Dragon Ball Z Kai, Dragon Ball Super, mais aussi à Oui-Oui, Bouli ou encore Bouba.', '2021-01-14 14:01:09', '2021-01-14 14:01:09'),
+(87, 'Monsarrat', 'Céline', 'Céline Monsarrat est une actrice et dramaturge française, née le 13 janvier 1954 à Casablanca, au Maroc.\r\n\r\nTrès active dans le doublage, elle est notamment connue pour être la voix française régulière de Julia Roberts1, mais également l\'une des voix régulières d\'Anne Heche et Melina Kanakaredes.\r\n\r\nDans le registre de l\'animation, elle est aussi particulièrement connue pour être la voix du personnage Bulma dans la saga Dragon Ball et ses suites, de la Schtroumpfette dans Les Schtroumpfs, d\'Anastasia dans le film du même nom, de Dory dans Le Monde de Nemo et sa suite Le Monde de Dory, de Maman Gourou dans Winnie l\'ourson, de la chauve-souris Batricia dans Les As de la jungle et de Clémentine dans la série éponyme.\r\n\r\nElle est aussi la voix antenne féminine de Rire et Chansons et a été celle de Yes FM (Suisse romande), est également écrivain et joue dans de nombreuses pièces au théâtre dont certaines qu\'elle a elle-même écrites et mises en scène.\r\n\r\nOn l\'entend également dans de nombreux documentaires et publicités, dont celle de la chaîne de distribution Lidl.', '2021-01-14 14:02:53', '2021-01-14 14:02:53'),
+(88, 'Pélissier', 'Christian', 'Christian Pélissier (parfois orthographié Pelissier), né le 2 septembre 1945 est un acteur français, spécialisé dans le doublage.\r\n\r\nIl est surtout connu pour interpréter de nombreux personnages de dessins animés comme le capitaine Haddock dans la série animée des Les Aventures de Tintin, Mojo Jojo dans les séries Les Supers Nanas de 1998 et de 2016, ou encore Yao dans Mulan.\r\n\r\nDans le jeu vidéo, il prête notamment sa voix à de nombreux personnages au sein de la saga The Elder Scrolls : Vivec dans Morrowind ainsi que dans The Elder Scrolls Online, les Khajiits et les Argoniens masculins dans Oblivion et Galmar Rudepoing dans Skyrim. Il est également la voix de Glottis dans Grim Fandango et de Salvador dans Borderlands 2.', '2021-01-14 14:06:14', '2021-01-14 14:06:14'),
+(89, 'Chantal', 'Claude', 'Claude Chantal est une actrice et directrice artistique française, née le 4 février 1933 et morte le 8 février 20161. Spécialisée dans le doublage, elle a notamment prêté sa voix à Daphné Blake dans Scooby-Doo, à Krilin dans la saga Dragon Ball, à Mrs Benet dans Orgueils et Préjugés, à Sailor Mars dans Sailor Moon, à Caroline Ingalls (Karen Grassle) dans La Petite Maison dans la prairie et au professeur McGonagall (Maggie Smith) dans les 5 premiers films de la saga Harry Potter.', '2021-01-14 14:07:47', '2021-01-14 14:07:47'),
+(90, 'Legrand', 'Eric', 'Éric Legrand est un acteur français né un 5 août[réf. nécessaire].\r\n\r\nNotamment actif dans le doublage1, il est connu pour, entre autres, avoir été une des voix françaises récurrentes d\'Owen Wilson2, être une voix régulière de Cameron Daddo2 et Frank Whaley2 mais aussi de John Slattery2 et Alexis Denisof2 ou encore de temps à autre de Christopher Heyerdahl2, Reed Diamond2, John Pyper-Ferguson2 et Michael Vartan2.\r\n\r\nIl a également une activité notable sur différents doublages d\'anime japonais ou de séries d\'animation comme dans Dragon Ball Z et Dragon Ball Super pour les personnages de Vegeta et Yamcha plus d\'autres voix additionnelles2 ou dans Saint Seiya (Les Chevaliers du Zodiaque) pour le personnage de Seiya et autres voix additionnelles2 ainsi que pour de nombreux personnages dont Jolly Jumper dans Les Nouvelles Aventures de Lucky Luke.', '2021-01-14 14:09:33', '2021-01-14 14:09:33'),
+(91, 'Lycan', 'Georges', 'Georges Lycan est un acteur français, né le 8 mai 1924 à Francueil (Indre-et-Loire) et mort le 6 février 2006 dans le 17e arrondissement de Paris1.\r\n\r\nActif dans le doublage, il a notamment été une voix récurrente de nombreux personnages (Ten Shin Han, Ginyu, Dr Gero, Cell, etc.) et le narrateur de la série d\'animation Dragon Ball Z.', '2021-01-14 14:11:13', '2021-01-14 14:11:13'),
+(92, 'Hernandez', 'Gérard', 'Julio Gerardo Hernández1, dit Gérard Hernandez, né le 20 janvier 1933 à Valladolid (Espagne), est un acteur français d\'origine espagnole.\r\n\r\nIl a joué dans de nombreux films et téléfilms et joue depuis 2009 le rôle de Raymond dans la série télévisée Scènes de ménages.\r\n\r\nGérard Hernandez a également mené une riche carrière dans le théâtre de boulevard et le doublage. Il a ainsi prêté sa voix à nombre de personnages de dessins animés, notamment Gonzo dans le Muppet Show, le professeur Moriarty dans la plupart des épisodes de la série animée Sherlock Holmes de Hayao Miyazaki, ainsi que le Grand Schtroumpf et le Schtroumpf grognon dans le dessin animé Les Schtroumpfs et Les Schtroumpfs, le film, ou encore Iznogoud dans la série télévisée Iznogoud. Il a également doublé au cinéma de nombreux acteurs de nationalités très diverses.', '2021-01-14 14:12:37', '2021-01-14 14:12:37'),
+(93, 'Labussière', 'Henri', 'Henri Labussière est un acteur français né le 20 mars 1921 à Villeneuve-Saint-Georges (Val-de-Marne) et mort le 15 juin 2008 (à 87 ans) à Paris.\r\nIl est notamment connu pour avoir prêté sa voix au professeur Tournesol dans la série d\'animation de 1991 (produite par Ellipse et Nelvana), à Panoramix dans la plupart des adaptations en dessins animés des aventures d’Astérix, ainsi qu\'au grand-père dans Les Razmoket.', '2021-01-14 14:14:51', '2021-01-14 14:14:51'),
+(94, 'Borg', 'Patrick', 'Patrick Borg est un acteur et directeur artistique1 français, né le 6 août 1957 à Paris (Seine).\r\n\r\nEssentiellement actif dans le doublage, il est particulièrement connu dans l\'animation pour être la voix du personnage Son Goku2,3 dans les séries (Dragon Ball Z et Dragon Ball Super4) et tous les films (où le personnage est apparu) ainsi qu\'à de nombreux personnages secondaires de Dragon Ball, mais aussi de Roland dans Ranma ½ et M. Lopart et Abuelo dans Manny et ses outils. Il est également la voix française régulière de l\'acteur David Boreanaz5,6 (notamment Angel dans Buffy contre les vampires et la série dérivée centrée sur le personnage du même nom, Seeley Booth dans Bones, etc.) et de Michael Gaston ainsi qu\'une des voix de Charlie Sheen et Eddie Marsan.', '2021-01-14 14:16:38', '2021-01-14 14:16:38'),
+(95, 'Ariotti', 'Philippe', 'Philippe Ariotti a fait des études d\'Art dramatique et lyrique, puis s\'est tourné vers le métier d\'acteur (cinéma, théâtre, télévision).\r\n\r\nCinéphile depuis son plus jeune âge, il fut lauréat de l\'émission télévisée Monsieur Cinéma de Pierre Tchernia, en 1970.\r\n\r\nPhilippe Ariotti est un spécialiste du cinéma français d\'avant-guerre, conférencier, animateur de ciné-club et cofondateur de la maison de disques Tiffany\'s.\r\n\r\nHomme de théâtre, il participe également à de nombreux doublages pour le cinéma ainsi que la télévision. Il est d’ailleurs surtout connu pour être la voix française de deux personnages emblématiques de Dragon Ball : Piccolo et Freezer.', '2021-01-14 14:18:13', '2021-01-14 14:18:13'),
+(96, 'Darbois', 'Richard', 'Richard Darbois est un acteur franco-canadien né le 7 décembre 1951 à Montréal (Québec, Canada), spécialisé dans le doublage en France.\r\n\r\nParticulièrement actif, il est connu pour être la voix française régulière de nombreux acteurs dont Harrison Ford, Danny Glover, Richard Gere, Jeff Goldblum et pour avoir été la voix de Dan Aykroyd et Patrick Swayze, ainsi qu\'une voix récurrente de Bill Murray, Arnold Schwarzenegger et Sylvester Stallone.\r\n\r\nAu sein de l\'animation, Richard Darbois est également très présent et se distingue singulièrement par son jeu et ses diverses possibilités vocales. Participant à de nombreuses œuvres pour les Studios Disney, il a notamment prêté sa voix à Buzz l\'Éclair dans la saga Toy Story et la série Les Aventures de Buzz l\'Éclair, au Génie dans Aladdin, à Oogie Boogie dans L\'Étrange Noël de monsieur Jack, à Shan-Yu dans Mulan, à Bruce dans Le Monde de Nemo, ou encore à M. Waternoose dans Monstres et Cie. Il a par ailleurs prêté sa voix à Batman dans plusieurs séries et films d\'animation des années 1990 (dont Batman, la série animée) et à Albator dans l\'anime Albator, le corsaire de l\'espace.\r\n\r\nDans les médias, il est connu pour être la voix off de la station de radio NRJ ou encore de certaines marques pour de la publicité.', '2021-01-14 14:20:00', '2021-01-14 14:20:00'),
+(97, 'Carel', 'Roger', 'Roger Carel, de son vrai nom Roger Bancharel, est un acteur français né le 14 août 1927 à Paris et mort le 11 septembre 2020 à Montfermeil (Seine-Saint-Denis).\r\n\r\nEn plus de 60 ans de carrière, il a participé à de nombreuses pièces de théâtre, films, séries télévisées et feuilletons radiophoniques.\r\n\r\nPersonnalité majeure du doublage français, il a été la voix française régulière de Peter Sellers et Peter Ustinov. Il a également doublé Anthony Daniels pour le personnage C-3PO dans la saga Star Wars de 1977 à 2011, Charlie Chaplin dans Le Dictateur, Benny Hill dans la série du même nom, David Suchet pour le personnage Hercule Poirot dans la série-homonyme de 1989, mais aussi Kermit la grenouille (entre autres) dans Le Muppet Show ou encore Alf dans la série du même nom.\r\n\r\nTravaillant aussi énormément dans l\'animation, il a participé à plusieurs productions françaises, prêtant notamment sa voix à Astérix dans toutes ses apparitions de 1967 à 2014 ainsi qu\'à Maestro dans les séries Il était une fois…\r\n\r\nIl a également participé à de nombreuses productions des studios Disney : il a ainsi été la première voix de Winnie l\'ourson (de 1977 à 2010), Porcinet et Coco Lapin, Kaa dans Le Livre de la jungle (1967), Bernard dans Les Aventures de Bernard et Bianca (1977), Jiminy Cricket dans le second doublage de Pinocchio et ses autres apparitions, le chat de Chester dans le second doublage d’Alice au pays des merveilles, ou encore, Basil dans Basil, détective privé (1986). Il a également été la première voix régulière de Mickey Mouse dans les années 1970.', '2021-01-14 14:21:40', '2021-01-14 14:21:40'),
+(98, 'Excoffier', 'Stéphane', 'Stéphane Excoffier est une actrice belgeLB.\r\n\r\nPratiquant aussi le doublage, elle est connue, entre autres, pour prêter sa voix depuis 2008, au héros Monkey D. Luffy de la série d\'animation One Piece.', '2021-01-14 14:25:08', '2021-01-14 14:25:08'),
+(99, 'Wermuth', 'Thierry', 'Thierry Wermuth est un acteur et directeur artistique de doublage français.\r\n\r\nIl est notamment connu pour être la voix française régulière de Jerry O\'Connell1,2 et James Van Der Beek1. Également connu au sein de l\'animation, il a été la voix du personnage Tintin dans Les Aventures de Tintin1 en 1992 et celle de Stan Marsh et Randy Marsh dans South Park1, depuis 1998.', '2021-01-14 14:26:16', '2021-01-14 14:26:16'),
+(100, 'Trabaud', 'Pierre', 'Pierre Trabaud, né Pierre Wolf Pibaret1 , est un comédien français, né le 7 août 1922 à Chatou et mort le 26 février 2005 à Versailles2.\r\n\r\nIl a prêté sa voix à de nombreux personnages de dessins animés, notamment Daffy Duck, Joe Dalton, Popeye et Kamé Sennin dans Dragon Ball et Dragon Ball Z.\r\n\r\nil a également fait la voix du personnage Dr Miguelitto Loveless incarné par (Michael Dunn dans les mystères de l\'Ouest ou il apparait dans une dizaine d\'épisode.', '2021-01-14 14:28:27', '2021-01-14 14:28:27'),
+(101, 'Ropion', 'Vincent', 'Vincent Ropion est un acteur français .\r\n\r\nTrès actif dans le doublage, il est connu pour avoir été entre autres la voix française de plusieurs personnages au sein de l\'animation comme Nicky Larson (Ryô Saeba en VO) dans la série du même nom, Julian Storm et autres voix dans Ranma ½, Rei dans Le Collège fou, fou, fou, Pierrot dans Il était une fois... l\'Homme et Il était une fois... l\'Espace, Spirou dans la série homonyme, Jean-Pierre Dujardin dans Mon ami Marsupilami ou encore plus récemment, Howard McKenzie dans Lastman et Géo Trouvetou dans le reboot de La Bande à Picsou.\r\n\r\nIl est également la voix du barde Jaskier dans les jeux The Witcher à partir de The Witcher 2: Assassins of Kings.\r\n\r\nIl est aussi la voix française régulière d\'acteurs comme Dominic Monaghan et Neil Patrick Harris.', '2021-01-14 14:30:05', '2021-01-14 14:30:05'),
+(102, 'Ledieu', 'Virginie', 'Virginie Ledieu est une actrice française, née le 2 août 1960 à Casablanca1.\r\n\r\nTrès active dans le doublage, elle est notamment connue pour être la voix française de stars américaines comme Meg Ryan, Drew Barrymore ou encore Anne Heche mais aussi d\'Alyson Hannigan et Maria Bello. Elle est également connue dans l\'animation pour être entre autres la voix du personnage de Saori Kido / la déesse Athéna dans Saint Seiya (Les Chevaliers du Zodiaque en VF), la version animée du manga du même nom, et ses suites.\r\n\r\nElle a aussi tenu un rôle remarqué dans la série télévisée française Plus belle la vie, de 2008 à 2010.', '2021-01-14 14:31:04', '2021-01-14 14:31:04'),
+(103, 'Coryn', 'William', 'William Coryn est un acteur français, né le 18 novembre 1957 à Paris (Seine).\r\n\r\nPratiquant également le doublage, il est entre autres la voix française de Jackie Chan, Matthew Broderick, Michael Shanks (Dr Jackson dans Stargate SG-1), de Wyatt Donnelly dans Code Lisa, du Dr Sean McNamara dans Nip/Tuck, du Dr Greene dans Urgences, et de divers personnages (notamment Kenny McCormick et Kyle Broflovski) dans South Park ainsi qu\'une voix récurrente de James Spader, il est également la 2e voix de Chucky à partir du 4e film.\r\n\r\nIl est également directeur artistique et adaptateur.\r\n\r\nIl pratique l\'aïkido et est actuellement 4e dan UFA et 3e dan Aïkikaï. Il est également 1er dan de judo.', '2021-01-14 14:31:58', '2021-01-14 14:31:58');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `migrations`
+--
+
+DROP TABLE IF EXISTS `migrations`;
+CREATE TABLE IF NOT EXISTS `migrations` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2014_10_12_100000_create_password_resets_table', 1),
+(3, '2019_08_19_000000_create_failed_jobs_table', 1),
+(4, '2021_01_09_091947_create_identites_table', 1),
+(5, '2021_01_09_092000_create_photos_table', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `password_resets`
+--
+
+DROP TABLE IF EXISTS `password_resets`;
+CREATE TABLE IF NOT EXISTS `password_resets` (
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  KEY `password_resets_email_index` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `photos`
+--
+
+DROP TABLE IF EXISTS `photos`;
+CREATE TABLE IF NOT EXISTS `photos` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `url_photo` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fk_identite_id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `photos_fk_identite_id_foreign` (`fk_identite_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `photos`
+--
+
+INSERT INTO `photos` (`id`, `url_photo`, `fk_identite_id`, `created_at`, `updated_at`) VALUES
+(79, 'Brigitte-Lecordier.png', 86, '2021-01-14 14:01:10', '2021-01-14 14:01:10'),
+(80, 'Céline-Monsarrat.jpg', 87, '2021-01-14 14:02:53', '2021-01-14 14:02:53'),
+(81, 'Christian-Pélissier.jpg', 88, '2021-01-14 14:06:14', '2021-01-14 14:06:14'),
+(82, 'Claude-Chantal.jpg', 89, '2021-01-14 14:07:47', '2021-01-14 14:07:47'),
+(83, 'Eric-Legrand.png', 90, '2021-01-14 14:09:33', '2021-01-14 14:09:33'),
+(84, 'Georges-Lycan.jpg', 91, '2021-01-14 14:11:13', '2021-01-14 14:11:13'),
+(85, 'Gérard-Hernandez.jpg', 92, '2021-01-14 14:12:37', '2021-01-14 14:12:37'),
+(86, 'Henri-Labussière.jpg', 93, '2021-01-14 14:14:51', '2021-01-14 14:14:51'),
+(87, 'Patrick-Borg.jpg', 94, '2021-01-14 14:16:38', '2021-01-14 14:16:38'),
+(88, 'Philippe-Ariotti.png', 95, '2021-01-14 14:18:14', '2021-01-14 14:18:14'),
+(89, 'Richard-Darbois.jpg', 96, '2021-01-14 14:20:00', '2021-01-14 14:20:00'),
+(90, 'Roger-Carel.jpg', 97, '2021-01-14 14:21:40', '2021-01-14 14:21:40'),
+(91, 'Stéphane-Excoffier.jpg', 98, '2021-01-14 14:25:08', '2021-01-14 14:25:08'),
+(92, 'Thierry-Wermuth.jpg', 99, '2021-01-14 14:26:16', '2021-01-14 14:26:16'),
+(93, 'Pierre-Trabaud.jpg', 100, '2021-01-14 14:28:27', '2021-01-14 14:28:27'),
+(94, 'Vincent-Ropion.jpg', 101, '2021-01-14 14:30:05', '2021-01-14 14:30:05'),
+(95, 'Virginie-Ledieu.jpg', 102, '2021-01-14 14:31:04', '2021-01-14 14:31:04'),
+(96, 'William-Coryn.jpg', 103, '2021-01-14 14:31:58', '2021-01-14 14:31:58');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(3, 'helloCSE', 'hellocse@gmail.com', NULL, '$2y$10$XddHmyZH1/fB0/uc16XIAuThiZPyL7OcfHCCdAZ7ur1J5Fmf2OkAS', NULL, '2021-01-14 15:37:56', '2021-01-14 15:37:56');
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `photos`
+--
+ALTER TABLE `photos`
+  ADD CONSTRAINT `photos_fk_identite_id_foreign` FOREIGN KEY (`fk_identite_id`) REFERENCES `identites` (`id`) ON DELETE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

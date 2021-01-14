@@ -1,62 +1,148 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+Voici les étapes que j'ai réalisé pour créer le projet. Vous pourrez néanmoins avoir besoin de connaître certaines informations ci-dessous pour tester le projet Fiche-star. Vous trouverez d'autres informations techniques sur les pages codées indiquées.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+- création nouveau repository sur github
+	Nom : FicheStar , 
+	mode public 
+	add readme 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- INSTALLER NODEJS
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- INSTALLER wamp
+	ajouter addon php 8.0.1 si la version n'est pas installée
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- INSTALLATION Composer   (version 1 à 2 : maj 2.0.8) :  
+	
+- Lancer invite commande
 
-## Learning Laravel
+- créer nouveau projet Laravel 8.21.0 :
+	executer : "composer create-project --prefer-dist laravel/laravel VOTRE_CHEMIN/FicheStar " 
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- paramétrer l'IDE dans le fichier .env
+	APP_NAME=FicheStar
+	DB_DATABASE=fiche-star
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- lancer wampserver
+	connexion à phpmyadmin : http://localhost/phpmyadmin/
+	utilisateur:  root
+	mot de passe:
 
-## Laravel Sponsors
+- Création de la base de données "fiche-star"
+	voir le fichier "BDD-SQL" pour la récupérer en copiant le code 
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- vérifier l'installation Laravel
+	création d'un virtual host : " fiche-star "
+	emplacement : VOTRE_CHEMIN/fichestar/public
 
-### Premium Partners
+- création du sous-domaine " mob " pour les versions mobiles :
+	Réglages de Windows 10 :
+		- Ouvrir le fichier "C:\Windows\System32\drivers\etc\hosts" en mode administrateur
+		- Ajouter le code suivant :
+----------------------------------------------------------------------------------
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+		127.0.0.1	fiche-star
+		::1	fiche-star
 
-## Contributing
+		127.0.0.1	mob.fiche-star
+		::1	mob.fiche-star
+		
+----------------------------------------------------------------------------------
+	Réglages Apache dans Wamp : 
+		- Décommenter la ligne "Include conf/extra/httpd-vhosts.conf" dans le fichier httpd.conf
+		- Vérifier le fichier httpd-vhosts.conf et ajoutez le code suivant si vous ne l'avez pas. La portion avec le serveur mob.fiche-star devrait néanmoins suffire.
+----------------------------------------------------------------------------------
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+		<VirtualHost *:80>
+			ServerName fiche-star
+			DocumentRoot "d:/projets/fichestar/public"
+			<Directory  "d:/projets/fichestar/public/">
+				Options +Indexes +Includes +FollowSymLinks +MultiViews
+				AllowOverride All
+				Require local
+			</Directory>
+		</VirtualHost>
 
-## Code of Conduct
+		<VirtualHost *:80>
+			ServerName mob.fiche-star
+			ServerAlias mob.fiche-star
+			DocumentRoot "d:/projets/fichestar/mobile"
+			<Directory  "d:/projets/fichestar/mobile/">
+				Options +Indexes +Includes +FollowSymLinks +MultiViews
+				AllowOverride All
+				Require local
+			</Directory>
+		</VirtualHost>
+		
+-------------------------------------------------------------------
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- affichage site FRONT: " http://fiche-star/ "
+- affichage site BACK: " http://fiche-star/back/home "
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- créer les migrations
+	invite commande : cd /d D:/projets/fichestar
+	php artisan make:migration create_identites_table
+	php artisan make:migration create_photos_table
+	modif des 2 fichiers ci-dessus
+	excuter : " php artisan migrate "
 
-## License
+- créer les models en excutant :
+	php artisan make:model Identite
+	php artisan make:model Photo
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- créer les controllers en executant :
+	php artisan make:IdentiteController
+
+- on ouvre git (clic droit sur le dossier, puis choisir git bash), puis entrer :
+	composer require laravel/ui
+	php artisan ui vue --auth
+	git init
+	git remote add FS https://github.com/GatienFlahaut/FicheStar.git
+	git add .
+	git commit -m "Installation de base : Laravel/Migrations/Models/Controllers"
+	git push FS master
+
+- ouvrir terminal dans VScode puis entrer (installation de dépendances) :
+	npm install 
+	npm run dev
+
+- création de 3 fichiers css dans "public/css"
+    mobile.css (uniquement pour les mobiles en front office)
+	desktop.css (uniquement pour les PC/tablettes en front office)
+	back.css (uniquement  pour le back office)
+
+- création des controleurs (avec artisan)
+	IdentiteController
+	
+- modification des controleurs
+	Homecontroller
+	LoginController
+
+- création des modèles (avec artisan)
+    Photo  
+    Identite
+
+- création d'un dossier "mobile" à la racine, avec son htaccess (pour mobile) et index.
+
+- utilisation du dossier "public/storage/image" pour stocker les images.
+
+- modification du "public/htaccess" pour détecter l'équipement utilisateur et renvoyer un sous domaine le cas échéant.
+
+- modification du fichier "ressources/lang/en/validation.php" afin de remplacer quelques messages en français.
+
+- création du dossier ressources/views/back contenant :
+	un dossier MODAL qui contient le code pour ajouter, modifier ou effacer une fiche.
+	le fichier HOME qui contient la liste des fiches existantes.
+	
+- création et modification du dossier ressources/views/layouts contenant :
+	le fichier "visiteur" pour le front office desktop
+	le fichier "visiteur-mobile" pour le front office mobile
+	le fichier "app" pour le back office
+	
+- création du dossier ressources/views/mobile contenant :
+	le fichier "star.blade.php" de la page Front office version mobile.
+	
+- création du fichier "ressources/views/star.blade.php" contenant la version Desktop de la page Front office.
+
+- création des routes dans "routes.web.php" (voir le fichier pour la liste)
+
